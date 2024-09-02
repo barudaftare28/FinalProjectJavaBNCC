@@ -5,6 +5,7 @@ import tokoshoe.model.Struk;
 import tokoshoe.view.TransaksiForm;
 import tokoshoe.database.StrukDAO;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -79,6 +80,11 @@ public class TransaksiController {
 	public void loadSepatu() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public ObservableList<Struk> getStrukData() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

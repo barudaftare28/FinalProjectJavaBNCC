@@ -148,6 +148,7 @@ public class SepatuForm extends GridPane {
 
         // Add columns to the table
         table.getColumns().addAll(kodeColumn, modelColumn, merkColumn, warnaColumn, hargaColumn);
+        table.setItems(sepatuList); // Set the items to the ObservableList
         table.setPrefHeight(150);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 

@@ -25,19 +25,19 @@ public class SepatuController {
             String warna = sepatuForm.getWarnaInput();
             double harga = sepatuForm.getHargaInput();
             
-            if (kode.isEmpty() || model.isEmpty() || merk.isEmpty() || warna.isEmpty()) {
+            if (model.isEmpty() || merk.isEmpty() || warna.isEmpty()) {
                 sepatuForm.showAlert("Invalid Input", "Please fill all fields.");
                 return;
             }
 
             Sepatu sepatu = new Sepatu(kode, model, merk, warna, harga);
             sepatuDAO.addSepatu(sepatu);
-            loadSepatu();
-            sepatuForm.showAlert("Success", "Sepatu has been successfully saved.");
+            sepatuForm.getTable().getItems().add(sepatu); // Pastikan tabel segera diperbarui
         } catch (NumberFormatException e) {
-            sepatuForm.showAlert("Invalid Input", "Kode must be an integer and Harga must be a number.");
+            sepatuForm.showAlert("Invalid Input", "Please ensure all fields are correctly filled.");
         }
     }
+
 
     public void updateSepatu() {
         Sepatu selectedSepatu = sepatuForm.getTable().getSelectionModel().getSelectedItem();
